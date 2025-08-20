@@ -43,10 +43,34 @@ while True:
             print(f'Infelizmente só temos {quantidade_frances} no momento.')
             break
 
+    #Pedido do Pão FraDocencês
+    if escolha == nome_doce:
+        quantidade = int(input('Qual a quantidade? '))
+        if quantidade <= quantidade_doce:
+            quantidade_doce -= quantidade
+            pedido_de_paes = quantidade
+            valor_compra = quantidade * valor_doce
+            print(f'Seu pedido ficou em R${valor_compra}.')
+        else:
+            print(f'Infelizmente só temos {quantidade_doce} no momento.')
+            break
+
+    #Pedido do Pão de Forma
+    if escolha == nome_forma:
+        quantidade = int(input('Qual a quantidade? '))
+        if quantidade <= quantidade_frances:
+            quantidade_forma -= quantidade
+            pedido_de_paes = quantidade
+            valor_compra = quantidade * valor_forma
+            print(f'Seu pedido ficou em R${valor_compra}.')
+        else:
+            print(f'Infelizmente só temos {quantidade_forma} no momento.')
+            break
+
     #Cálculo de entrega
     forma_retirada = input('É para 1: retirar ou 2: entregar? ').lower()
     if forma_retirada == '2':
-        bairro_entrega = input(f'Qual o bairro? (1:{bairro_barroco} ou 2:{bairro_sao_jose}).')
+        bairro_entrega = input(f'Qual o bairro? (1:{bairro_barroco}, 2:{bairro_sao_jose}): ')
         if bairro_entrega == '1':
             valor_frete = frete_barroco
             print(f'Valor do frete R${valor_frete}.')
@@ -60,3 +84,17 @@ while True:
         valor_frete = 0.00
     else:
         break
+
+    #Dados do cliente
+    dados_cliente = input('Informe seu nome: ')
+    forma_pagamento = input('Escolha a forma de pagamento (1: Dinheiro, 2: Cartão): ')
+    if forma_pagamento == '1':
+        forma_pagamento = 'Dinheiro'
+    else:
+        forma_pagamento = 'Cartão'
+    
+    #Código de entrega
+    codigo_atual = codigo_venda + 1
+    
+    print(f'O valor total da sua compra foi de R${valor_compra + valor_frete}')
+    break
