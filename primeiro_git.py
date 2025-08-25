@@ -1,2 +1,2 @@
 print('Github.')
-print('Meu segundo commit.')
+print('Meu primeiro commit.')
