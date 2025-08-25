@@ -1,10 +1,14 @@
 def mostrar_trajetoria(posicao):
+    verde = '\033[92m'
+    vermelho = '\033[91m'
+    amarelo = '\033[93m'
+    reset = '\033[0m'
     if posicao > 0:
-        print("Trajetória: " + ">>" * posicao + " R")
+        print("Trajetória: " + f"{verde}{'>>' * posicao}{reset} {amarelo}R{reset}")
     elif posicao < 0:
-        print("Trajetória: " + "<<" * abs(posicao) + " R")
+        print("Trajetória: " + f"{vermelho}{'<<' * abs(posicao)}{reset} {amarelo}R{reset}")
     else:
-        print("Trajetória: R (início)")
+        print(f"Trajetória: {amarelo}R (início){reset}")
 
 print('1. Avançar \n2. Recuar \n3. Status \n4. Reiniciar \n5. Desligar')
 
