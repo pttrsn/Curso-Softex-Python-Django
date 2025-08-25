@@ -1,3 +1,10 @@
+def mostrar_trajetoria(posicao):
+    if posicao > 0:
+        print("Trajetória: " + ">>" * posicao + " R")
+    elif posicao < 0:
+        print("Trajetória: " + "<<" * abs(posicao) + " R")
+    else:
+        print("Trajetória: R (início)")
 
 print('1. Avançar \n2. Recuar \n3. Status \n4. Reiniciar \n5. Desligar')
 
@@ -9,16 +16,19 @@ while True:
         avancar = int(input('Digite a quantidade de posições para avançar: '))
         posicao += avancar
         print(f'O Robô avançou {avancar} posições...'.center(40))
+        mostrar_trajetoria(posicao)
     elif comando == 2:
         recuar = int(input('Digite a quantidade de posições para recuar: '))
         posicao -= recuar
         print(f'O Robô recuou {recuar} posições...'.center(40))
+        mostrar_trajetoria(posicao)
     elif comando == 3:
         print(f'A posição atual do Robô é {posicao}.'.center(40))
-
+        mostrar_trajetoria(posicao)
     elif comando == 4:
         print('Reiniciando o Robô...'.center(40))
         posicao = 0
+        mostrar_trajetoria(posicao)
     elif comando == 5:
         print('Desligando o Robô...'.center(40))
         break
