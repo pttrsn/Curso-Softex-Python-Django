@@ -15,6 +15,8 @@ while count < 5:
     dec = dec.replace('3','i')
     dec = dec.replace('4','o')
     dec = dec.replace('5','u')
+    
+    count += 1
 
     print(f'{cod}')
     print(f'{dec}')
