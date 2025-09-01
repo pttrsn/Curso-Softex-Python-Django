@@ -4,7 +4,7 @@ while True:
     v3 = float(input('Digite o 3° valor: '))
 
     if v1 > 0 and v2 > 0 and v3 > 0:
-        if v1 < v2 + v3 and v2 < v1 + v3 and v3 < v1 + v2:
+        if v1 < v2 + v3 and v2 < v1 + v3 and v3 < v1 + v2 and v1 > abs(v2 - v3) and v2 > abs(v1 - v3) and v3 > abs(v1 - v2):
             if v1 > (v2 - v3) and v2 > (v1 - v3) and v3 > (v1 - v2):
                 print('Os valores podem formar um triângulo.')
                 if v1 == v2 == v3:
