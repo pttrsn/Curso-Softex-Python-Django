@@ -12,6 +12,12 @@ estoque_vir = set([
     ('Chinelo', 106)
 ])
 
+#Ou criar uma nova variável para set(), exemplo:
+'''estoque_pri: [(...)]
+
+set_pri = set(estoque_pri)
+'''
+
 disponivel_privir = estoque_pri.intersection(estoque_vir)
 disponivel_pri = estoque_pri.difference(estoque_vir)
 disponivel_vir = estoque_vir.difference(estoque_pri)
