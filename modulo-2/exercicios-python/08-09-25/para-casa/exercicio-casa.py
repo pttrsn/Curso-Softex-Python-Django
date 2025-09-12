@@ -33,5 +33,3 @@ elif pais == 'Portugal':
     print('A capital de', pais, 'é', paises['Portugal'],'.')
 elif pais.get(erro, 'País desconhecido'):
     print('País desconhecido')
-    
-
