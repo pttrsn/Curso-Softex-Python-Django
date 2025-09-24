@@ -22,6 +22,7 @@ class Gato(Animal):
 
     def som(self):
         print('Miau!') #Método da subclasse Gato.
+    
 
 
 cao = Cachorro('Rex', 4, 'Vira-lata') #Executando a subclasse Cachorro.
