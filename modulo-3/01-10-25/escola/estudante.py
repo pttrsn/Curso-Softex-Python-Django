@@ -4,23 +4,15 @@ class Estudante(Pessoa):
     def __init__(self, nome, idade, matricula):
         super().__init__(nome, idade)
         self.matricula = matricula
+        self._notas = {} #notas:dict[str, list[float]] = {}
 
-    notas:dict[str, list[float]] = {}
-
-    def adicionar_resultado(materia: str, nota:float):
-        aula = notas.get(materia)
-        print(aula)
-        if aula:
-            aula.append(nota)
-        else:
-            notas[materia] = [nota]
-
-        print(notas)
-
-    adicionar_resultado('Matemática', 9.0)
-
-
-'''   @property
+    def adicionar_nota(self, materia: str, nota:float):
+        if materia not in self._notas:
+            self._notas[materia] = []
+        self._notas[materia].append(nota)
+        
+'''
+    @property
     def nota(self):
         return self._nota
 
@@ -31,9 +23,15 @@ class Estudante(Pessoa):
             return self._nota
         else:
             raise ValueError('A nota deve conter apenas números.')
+'''
 
-nota = {
-    'Matemática': 9.5, 
-    'Química': 7.0, 
-    'Física': 7.5
-}'''
+
+estudante1 = ("Carlos", 16, "2025001")
+
+estudante1.adicionar_nota("Matemática", 9.5)
+estudante1.adicionar_nota("Matemática", 8.0)
+estudante1.adicionar_nota("História", 7.0)
+
+print(f"Notas de Matemática: {estudante1._notas.get('Matemática')}")
+print(f"Notas de História: {estudante1._notas.get('História')}")
+print(f"Todas as notas: {estudante1._notas}")
