@@ -1,0 +1,9 @@
+CREATE TABLE usuario (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+);
+
+CREATE TABLE curso (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+);
