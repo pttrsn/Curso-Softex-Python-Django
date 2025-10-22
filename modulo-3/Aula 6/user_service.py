@@ -4,18 +4,23 @@ from hasher import hash_senha, verificar_senha
 
 
 class UserService:
-
     def __init__(self):
         """
         crie um atributo que receberá a UserModel como composição
         """
+        self.user_model = UserModel
 
     def _safe_user_data(self, user) -> dict | None:
         """
         este é um método privado que recebe um usuarios do banco.
         verifique se o usuários existe e então retorne ele sem a sua senha
-        caso ele ão exista retorne None
+        caso ele não exista retorne None
         """
+        if user is None:
+            return None
+        user_dict = dict(user)
+        user_dict.pop('senha_hash', None)
+        return user_dict
 
     def _is_authorized(
         self,
@@ -26,10 +31,18 @@ class UserService:
     ) -> bool:
         """
         Método que verifica o perfil do usuários, se for Diretoria retorne true
-        Se não tiver target_user_id retorn false
+        Se não tiver target_user_id retorne false
         Se  action == "edit_self" retorne current_user_id == target_user_id
         No geral retorn false
         """
+        if current_user_profile is 'Diretoria':
+            return True
+        elif target_user_id == None:
+            return False
+        elif action is 'edit_self':
+            return current_user_id == target_user_id
+        else:
+            return False
 
     def register_user(
         self,
@@ -45,6 +58,18 @@ class UserService:
         O campo Nome deve ter apenas letras e não deve estar vazio, retorne False se não tiver e a mensagem de erro.
         Caso os campos atendas as requisições, faça o hash da senha e salve use o método create_user da User Model
         """
+        if len(senha) < 8:
+            print('Erro! Caracteres insuficientes.')
+            return False
+        
+        arroba = '@'
+        if len(email) >= 10 and arroba in email and email.endswith('.com'):
+            return True
+        else:
+            print('Erro! O email não atende os requisitos.')
+            return False
+        
+        if nome_completo 
 
     def login_user(self, email: str, senha: str) -> tuple[dict | None, str]:
         """
