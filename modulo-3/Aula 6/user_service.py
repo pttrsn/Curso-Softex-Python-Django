@@ -69,7 +69,7 @@ class UserService:
             print('Erro! O email não atende os requisitos.')
             return False
         
-        if nome_completo 
+        if nome_completo
 
     def login_user(self, email: str, senha: str) -> tuple[dict | None, str]:
         """
