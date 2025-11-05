@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views # O '.' importa as 'views' do app atual
+from . import views
 
 urlpatterns = [
-    path('home/', views.home, name='home'),
+    path('', views.home, name='home',),
 ]
