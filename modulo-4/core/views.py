@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 def home(request):
     context = {
-        'nome_usuario': 'Júnior',
+        'nome_usuario': 'Petterson',
         'tecnologias': ['Python', 'Django', 'HTML', 'CSS']
     }
     return render(request, 'home.html', context)
