@@ -6,6 +6,9 @@ pip install django
 create project *
 django-admin startproject meuprojeto .
 
+choose folder *
+cd --folder name--
+
 run server *
 python manage.py runserver
 
@@ -24,5 +27,3 @@ admin *
     12345678
 )
 python manage.py createsuperuser
-
-
