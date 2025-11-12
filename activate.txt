@@ -1,0 +1,28 @@
+venv activate *
+python -m venv venv
+
+install django *
+pip install django
+create project *
+django-admin startproject meuprojeto .
+
+run server *
+python manage.py runserver
+
+create core *
+python manage.py startapp core
+
+migration *
+python manage.py makemigrations core
+migrate *
+python manage.py migrate
+
+admin *
+(
+    admin 
+    admin@admin.com 
+    12345678
+)
+python manage.py createsuperuser
+
+
