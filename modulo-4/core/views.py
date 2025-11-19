@@ -4,9 +4,10 @@ from .models import Tarefa
 from .forms import TarefaForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def home(request):
-
     if request.method == "POST":
         form = TarefaForm(request.POST)
 
@@ -37,7 +38,6 @@ def concluir_tarefa(request, pk):
     return redirect('home')
 
 def deletar_tarefa(request, pk):
-
     tarefa = get_object_or_404(Tarefa, pk=pk)
     if request.method == 'POST':
         tarefa.delete()
