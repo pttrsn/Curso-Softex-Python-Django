@@ -1,5 +1,7 @@
 venv activate *
 python -m venv venv
+.\.venv\Scripts\activate
+pip install -r requiriments.txt
 
 install django *
 pip install django
