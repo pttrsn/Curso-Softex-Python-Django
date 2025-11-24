@@ -1,4 +1,9 @@
 from django.contrib import admin
 from .models import Tarefa
 
-admin.site.register(Tarefa)
+class TarefaAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'user', 'concluida', 'criada_em')
+    list_filter = ('concluida', 'user', 'criada_em')
+    search_fields = ('titulo', 'user__username')
+
+admin.site.register(Tarefa,TarefaAdmin)
