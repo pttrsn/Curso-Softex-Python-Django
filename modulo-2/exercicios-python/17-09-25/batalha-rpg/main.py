@@ -2,7 +2,7 @@ from combate import batalha
 from personagens import Personagens
 
 heroi = Personagens('Ronaldo de Souza', 100, 15, pocoes=1)
-monstro = Personagens('Conta de Luz', 150, 20)
+monstro = Personagens('Conta de Luz', 150, 15)
 
 batalha(heroi, monstro)
 
