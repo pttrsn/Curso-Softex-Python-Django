@@ -6,7 +6,7 @@ class Tarefa(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='tarefa')
     titulo = models.CharField(max_length=200)
     concluida = models.BooleanField(default=False)
-    criada_em = models.DateTimeField(auto_now_add=True) 
+    data_criacao = models.DateTimeField(auto_now_add=True) 
 
     def __str__(self):
         return self.titulo

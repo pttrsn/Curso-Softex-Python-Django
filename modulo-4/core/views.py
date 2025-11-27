@@ -18,7 +18,7 @@ def home(request):
     else:
         form = TarefaForm()
 
-    todas_as_tarefas = Tarefa.objects.filter(user=request.user).order_by('-criada_em')
+    todas_as_tarefas = Tarefa.objects.filter(user=request.user).order_by('-data_criacao')
     
     context = {
     'nome_usuario': request.user.username,

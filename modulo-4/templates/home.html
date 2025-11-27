@@ -35,7 +35,7 @@
           <strong style="color: orange;">(☐ Pendente)</strong>
         {% endif %}
         <br />
-        <small>Criada em: {{ tarefa.criada_em|date:'d/m/Y H:i' }}</small> <div style="margin-top:
+        <small>Criada em: {{ tarefa.data_criacao|date:'d/m/Y H:i' }}</small> <div style="margin-top:
 10px;">
           <form action="{% url 'deletar_tarefa' tarefa.pk %}" method="POST" style="display: inline;">
             {% csrf_token %}
