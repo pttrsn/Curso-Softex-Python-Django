@@ -12,7 +12,7 @@ def home(request):
 
         if form.is_valid():
             tarefa = form.save(commit=False)
-            tarefa.usuario = request.usuario
+            tarefa.usuario = request.user
             tarefa.save()
             return redirect('home')
     else:
