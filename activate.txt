@@ -10,6 +10,9 @@ pip install django
 create project *
 django-admin startproject meuprojeto .
 
+pip install django djangorestframework django-environ
+pip install django djangorestframework-simplejwt  
+
 choose folder *
 cd --folder name--
 
